@@ -13,7 +13,7 @@ add_subdirectory(third-party/glew-1.10.0)
 include_directories(lib/include)
 add_subdirectory(lib)
 
-set(ALL_LIBRARIES glew ${OPENGL_LIBRARIES} ${SDL_LIBRARY})
+set(ALL_LIBRARIES glew ${OPENGL_LIBRARIES} ${SDL_LIBRARY} musikartLib)
 set(CMAKE_CXX_FLAGS "-std=c++0x")
 
 
@@ -23,5 +23,5 @@ add_subdirectory(Fichier)
 add_subdirectory(Participants)
 add_subdirectory(Voiture)
 
-add_executable (musikart main.cpp)
+add_executable(musikart main.cpp)
 target_link_libraries(musikart ${ALL_LIBRARIES})
