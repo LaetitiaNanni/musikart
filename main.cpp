@@ -5,10 +5,12 @@
 #include "Participants/adversaireParticipant.hpp"
 #include "Participants/joueurParticipant.hpp"
 
+#include <iostream>
+
 
 int main(int argc, char **argv) {
 
-
+	
 
 
 
