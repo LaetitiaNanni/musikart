@@ -5,15 +5,21 @@ find_package(SDL REQUIRED)
 
 include_directories(${OPENGL_INCLUDE_DIR} ${SDL_INCLUDE_DIR})
 
+#${ASSIMP_INCLUDE_DIR} = third-party/assimp--3.0.1270-sdk/include
+# ${ASSIMP_LIBRARY} = third-party/assimp--3.0.1270-sdk/lib/assimp_release-dll_x64/assimp.lib
+
 
 include_directories(third-party/glew-1.10.0/include)
 add_definitions(-DGLEW_STATIC=1)
 add_subdirectory(third-party/glew-1.10.0)
 
+include_directories(third-party/assimp--3.0.1270-sdk/include)
+add_subdirectory(third-party/assimp--3.0.1270-sdk)
+
 include_directories(lib/include)
 add_subdirectory(lib)
 
-set(ALL_LIBRARIES glew ${OPENGL_LIBRARIES} ${SDL_LIBRARY} musikartLib)
+set(ALL_LIBRARIES glew ${OPENGL_LIBRARIES} ${SDL_LIBRARY} musikartLib assimp)
 set(CMAKE_CXX_FLAGS "-std=c++0x")
 
 
