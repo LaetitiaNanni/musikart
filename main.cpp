@@ -72,12 +72,12 @@ int main() {
 
 	SDL_Quit();
 */
-	/*const aiScene* scene;
-	const std::string String = "Fichier/bird_final.md2";
-	const std::string& refString = String; 
+	const aiScene* scene;
+	const std::string refString = "../Model3D/bird_final.md2";
+	
 	bool wesh =  DoTheImportThing(refString);
 
-	return 1;
-*/
+	
+
 	return EXIT_SUCCESS;
 }
