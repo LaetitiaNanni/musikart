@@ -1,0 +1,28 @@
+# 
+# Wavefront material file
+# Converted by the DEEP Exploration  2.00.1211
+# Right Hemisphere, LTD
+# http://www.righthemisphere.com/
+# 
+
+newmtl mir_wood
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+illum 2
+Ns 12.1257
+map_Kd DOUKA.bmp
+
+newmtl _0___Default
+Ka 0.858824 0.843137 0.737255
+Kd 0.858824 0.843137 0.737255
+Ks 0 0 0
+illum 2
+Ns 4
+
+newmtl met_kom
+Ka 0.0784314 0.12549 0.160784
+Kd 0.0784314 0.12549 0.160784
+Ks 0.788235 0.788235 0.788235
+illum 2
+Ns 12.1257
