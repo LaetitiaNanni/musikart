@@ -29,5 +29,5 @@ add_subdirectory(Fichier)
 add_subdirectory(Participants)
 add_subdirectory(Voiture)
 
-add_executable(musikart main.cpp)
+add_executable(musikart main.cpp Fichier/fichier.hpp Fichier/fichier.cpp Bonus/bonus.cpp Bonus/bonus.hpp Circuit/circuit.hpp Circuit/circuit.cpp Interface/interface.hpp Interface/interface.cpp Participants/participant.hpp Participants/participant.cpp Participants/adversaireParticipant.hpp Participants/adversaireParticipant.cpp Participants/joueurParticipant.hpp Participants/joueurParticipant.cpp Voiture/voiture.cpp Voiture/voiture.hpp Voiture/guitareVoiture.cpp Voiture/guitareVoiture.hpp)
 target_link_libraries(musikart ${ALL_LIBRARIES})
