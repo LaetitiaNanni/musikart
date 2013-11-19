@@ -5,12 +5,14 @@
 #include <assimp/postprocess.h> // Post processing flags
 
 
+/*Afficher la scène*/
 void DoTheSceneProcessing(const aiScene* scene){
 	std::cout << "scene "<<scene<< std::endl;
 	std::cout << "&scene "<<&scene<< std::endl;
 	std::cout << "scene->mMeshes "<< scene->mMeshes << std::endl;
 }
 
+/*Afficher les erreurs lors de l'import de fichier 3D*/
 void DoTheErrorLogging( const char* error){
 	std::cout << "ErrorLogging: "<< error	<< std::endl;
 }
@@ -28,13 +30,7 @@ bool DoTheImportThing( const std::string& pFile)
 		aiProcess_JoinIdenticalVertices |
 		aiProcess_SortByPType);
 
-
-	/*const aiScene* scene = importer.ReadFile( pFile,
-		aiProcess_CalcTangentSpace );
-*/
-
-	std::cout << "scene "<< scene << std::endl;
-
+	
 	// If the import failed, report it
 	if( !scene)
 	{
@@ -44,19 +40,9 @@ bool DoTheImportThing( const std::string& pFile)
 	}
 	
 	// Now we can access the file's contents.
-	DoTheSceneProcessing( scene);
+	DoTheSceneProcessing(scene);
 	// We're done. Everything will be cleaned up by the importer destructor
 	return true;
 }
 
 
-
-int main () {
-	const aiScene* scene = NULL;
-	const std::string String = "bed1.obj";
-	std::cout << "String "<< String << std::endl;
-	const std::string& refString = String; 
-	bool wesh =  DoTheImportThing(refString);
-
-		return 1;
-}
