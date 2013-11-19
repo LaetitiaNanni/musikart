@@ -1,0 +1,3 @@
+/home/vivie/Documents/Musikart/musikart/third-party/assimp--3.0.1270-sdk/code/CMakeFiles/assimp.dir
+/home/vivie/Documents/Musikart/musikart/third-party/assimp--3.0.1270-sdk/tools/assimp_cmd/CMakeFiles/assimp_cmd.dir
+/home/vivie/Documents/Musikart/musikart/third-party/assimp--3.0.1270-sdk/CMakeFiles/uninstall.dir
