@@ -72,12 +72,18 @@ int main() {
 
 	SDL_Quit();
 */
-	const aiScene* scene;
-	const std::string refString = "../Model3D/bird_final.md2";
+	/*const aiScene* scene;
+	const std::string refString = "../Model3D/bed1.obj";
 	
 	bool wesh =  DoTheImportThing(refString);
+*/
 
+	int type = RandomType();
+	Bonus ab = Bonus (1, -100.3, type);
+	std::cout << ab.getType() << std::endl;
 	
+	std::cout << ab.getX() << std::endl;
+	std::cout << ab.getY() << std::endl;
 
 	return EXIT_SUCCESS;
 }
