@@ -1,11 +1,12 @@
 #pragma once
+#include "Point3D.hpp"
 
 /*
 Bonus : un type, une position en X et une position en Y
 Un constructeur
 Un destructeur
 Un getType
-Un getX et un getY
+Un getPosition
 
 Le type est un int entre 1 et 3
 */
@@ -13,15 +14,23 @@ Le type est un int entre 1 et 3
 class Bonus{
 
 public: 	
-	Bonus (float x, float y, int type);
+	// /!\ Appeler RandomType pour définir le type avant de construire le bonus
+	Bonus (float x, float y, float z, int type); // on construit les positions en x, y,z
+	Bonus (const Point3D& pos, int type); // on construit avec le Point3D
+	Bonus (const Bonus& other);
+
 	~Bonus();
+
 	int getType();
-	float getX();
-	float getY();
+	void setType(int type);
+
+	Point3D getPosition();
+	void setPosition(const Point3D& position);
+	void setPosition(float x, float y, float z);
+
 private:
 	int type; // 1 = ralentisseur, 2 = accelerateur, 3 = stock d'armes
-	float x; // position en x
-	float y; // position en y
+	Point3D position; 
 
 };
 
