@@ -19,14 +19,16 @@ Bonus::Bonus(float xBonus, float yBonus, float zBonus, int typeBonus){
 		this->type = 1;
 	}
 
+	estPris = false;
+
 }
 
 Bonus::Bonus (const Point3D& pos, int type): 
-	position(pos), type(type){
+	position(pos), type(type), estPris(false){
 }
 
 Bonus::Bonus (const Bonus& other) :
-	position(other.position), type(other.type){
+	position(other.position), type(other.type), estPris(false){
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -68,6 +70,18 @@ void Bonus::setType(int typeBonus){
 		std::cout << "Type incorrect" << std::endl;
 	}
 }
+
+
+// Récupérer estpris
+bool Bonus::getEstPris(){
+	return (this->estPris);
+}
+
+// Modifier estPris
+void Bonus::setEstPris(bool nouveauEstPris){
+	estPris = nouveauEstPris;
+}
+
 
 // génère un entier entre 1 et NB_BONUS (=3) (type de bonus)
 // /!\ cette fonction n'est pas définie dans la classe Bonus

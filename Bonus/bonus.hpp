@@ -21,16 +21,24 @@ public:
 
 	~Bonus();
 
+	// gestion type
 	int getType();
 	void setType(int type);
 
+	// gestion position
 	Point3D getPosition();
 	void setPosition(const Point3D& position);
 	void setPosition(float x, float y, float z);
 
+	// gestion estPris
+	bool getEstPris();
+	void setEstPris(bool nouveauEstPris);
+
+
 private:
 	int type; // 1 = ralentisseur, 2 = accelerateur, 3 = stock d'armes
 	Point3D position; 
+	bool estPris; // = false par défaut. Quand on crée le bonus, il n'est pas pris
 
 };
 
