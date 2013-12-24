@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 
 struct Point3D {
     float x, y, z;
@@ -19,4 +20,8 @@ struct Point3D {
     bool operator==(const Point3D& other) const;
     bool operator!=(const Point3D& other) const;
 };
+
+
+// Surcharge de l'opérateur << pour afficher le point
+std::ostream& operator<<(std::ostream& out, const Point3D& point);
 

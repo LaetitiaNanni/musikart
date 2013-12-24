@@ -52,3 +52,9 @@ bool Point3D::operator==(const Point3D& other) const {
 bool Point3D::operator!=(const Point3D& other) const {
     return !(*this == other);
 }
+
+// surcharge de l'opérateur << pour afficher le point
+std::ostream& operator<<(std::ostream& out, const Point3D& point){
+    out << point.x << " " << point.y << " " << point.z;
+    return out;
+}
