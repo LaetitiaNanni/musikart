@@ -6,25 +6,23 @@
 #define NB_BONUS 3
 
 // Constructeur
-Bonus::Bonus(float xBonus, float yBonus, float zBonus, int typeBonus){
+Bonus::Bonus(float xBonus, float yBonus, float zBonus){
+
+	int typeBonus = RandomType();
+
 	position.x = xBonus;
 	position.y = yBonus;
 	position.z = zBonus; 
 
 	// si le type est incorrect, on le met à 1
-	if (typeBonus >=1 && typeBonus <= NB_BONUS){
-		this->type = typeBonus;
-	}
-	else{
-		this->type = 1;
-	}
-
+	this->type = typeBonus;
+	
 	estPris = false;
 
 }
 
-Bonus::Bonus (const Point3D& pos, int type): 
-	position(pos), type(type), estPris(false){
+Bonus::Bonus (const Point3D& pos): 
+	position(pos), type(RandomType()), estPris(false){
 }
 
 Bonus::Bonus (const Bonus& other) :
@@ -89,4 +87,18 @@ int RandomType(){
 	srand (time(NULL));
   	int randomType = rand() % NB_BONUS + 1;
   	return randomType;
+}
+
+
+std::vector<Bonus> creerTableauBonus(std::vector<Point3D> tableauDePosition){
+	if (tableauDePosition.size() < 0 ){
+		std::cout <<" Erreur, tableau de position vide "<< std::endl;
+	}
+	std::vector<Bonus> tableau;
+	for (int i = 0; i < tableauDePosition.size(); ++i){
+		Bonus nouveauBonus = Bonus(tableauDePosition[i]);
+		tableau.push_back(nouveauBonus);
+	}
+
+	return tableau;
 }
