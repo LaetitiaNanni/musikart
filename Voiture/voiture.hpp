@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../lib/include/Point3D.hpp"
+#include "Point3D.hpp"
 
 class Voiture {
 	private:
@@ -9,9 +9,10 @@ class Voiture {
 		int puissance;
 		int virage;
 		int poids;
+		int rayon; // rayon autour de la voiture dans lequel on pourra envoyer à un adversaire un bonus par exemple
 	public:
 		// Constructeurs
-		Voiture(int vitesse, Point3D position, int puissance, int virage, int poids);
+		Voiture(int vitesse, Point3D position, int puissance, int virage, int poids, int rayon);
 		//Voiture(); //par défaut -> pas de sens ici je pense
 		Voiture(const Voiture& other); // constructeur par copie
 
@@ -24,14 +25,17 @@ class Voiture {
 		int getPuissance();
 		int getVirage();
 		int getPoids();
+		int getRayon();
 
 		// Setteur
 		void setVitesse(int vit);
 		void setPosition(Point3D pos);
-		void setPosition(int x, int y, int z);
+		void setPosition(float x, float y, float z);
 		void setPuissance(int pui);
 		void setVirage(int vir);
 		void setPoids(int poi);
+		void setRayon(int ray);
 
 		// Scanner : dans un rayon autour de lui il vérfie s'il y a l'autre objet passé en paramètre
+		bool ScannerVoiture(Point3D positionAdversaire); // retourne vrai s'il est dans le rayon autour de la voiture
 };
