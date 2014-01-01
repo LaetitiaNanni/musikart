@@ -1,12 +1,12 @@
 #include "circuit.hpp"
 
 // Constructeur
-Circuit::Circuit(){
+Circuit::Circuit(char* nouveauNom){
 
-	std::cout << "pouet circuit" <<std::endl;
+	this->nom = nouveauNom;
 
 	// on crée zoneDeBonus
-	this->zoneDeBonus = recupererPositionZoneDeBonus();
+	this->zoneDeBonus = creerPositionZoneDeBonus();
 
 	// on crée tableauDeBonus
 	std::vector<Point3D> zoneDeBonusDuCircuit = this->getZoneDeBonus();
@@ -45,7 +45,7 @@ std::vector<int> Circuit::scannerEtatBonus(){
 
 
 // Créer le vector zoneDeBonus
-std::vector<Point3D> Circuit::recupererPositionZoneDeBonus(){
+std::vector<Point3D> Circuit::creerPositionZoneDeBonus(){
 
 	std::vector<Point3D> zones;
 	for (int i = 0; i < NB_ZONE_BONUS; ++i)
@@ -62,12 +62,79 @@ std::vector<Point3D> Circuit::recupererPositionZoneDeBonus(){
 
 
 
-// Créer le vector du script de parcours
-std::vector<Point3D>  Circuit::recupererCoordonneesParcoursScript(){
+// Créer le vector coordonnées de parcours1 des adversaires
+void Circuit::creerScriptParcours1(){
+	std::vector<Point3D> parcours;
 
+	if (this->nom == "circuit1"){
+		
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+	}
+
+	else if (this->nom == "circuit2"){
+		
+		parcours.push_back(Point3D(2, 2, 2));
+		parcours.push_back(Point3D(2, 2, 2));
+		parcours.push_back(Point3D(2, 2, 2));
+		parcours.push_back(Point3D(2, 2, 2));
+		parcours.push_back(Point3D(2, 2, 2));
+	}
+	parcours1 = parcours;
 }
 
+// Créer le vector coordonnées de parcours2 des adversaires
+void Circuit::creerScriptParcours2(){
+	std::vector<Point3D> parcours;
+	if (this->nom == "circuit1"){
+		
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+	}
 
+	else if (this->nom == "circuit2"){
+		
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+	}
+
+	parcours2 = parcours;
+}
+
+// Créer le vector coordonnées de parcours3 des adversaires
+void Circuit::creerScriptParcours3(){
+
+	std::vector<Point3D> parcours;
+	if (this->nom == "circuit1"){
+		
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+	}
+
+	else if (this->nom == "circuit2"){
+		
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+		parcours.push_back(Point3D(1, 1, 1));
+	
+	}
+	parcours3 = parcours;
+
+}
 
 // Récupérer le vector zoneDeBonus
 std::vector<Point3D> Circuit::getZoneDeBonus(){
@@ -96,4 +163,13 @@ void Circuit::creerBonusManquant(){
 		tableauDeBonus[idDeBooleenPris[i]] = nouveauBonus;
 	}
 
+}
+
+
+void Circuit::setNom(char* nouveauNom){
+	nom = nouveauNom;
+}
+
+char* Circuit::getNom(){
+	return nom;
 }

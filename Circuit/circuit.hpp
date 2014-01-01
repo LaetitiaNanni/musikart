@@ -38,7 +38,7 @@ CREATION DES SCRIPTS DE PARCOURS:
 
 class Circuit{
 public:
-	Circuit(); // constructeur
+	Circuit(char* nom="circuit1"); // constructeur, de nom "circuit1" par défaut
 	/*
 	Appelle recupererPositionZoneDeBonus() pour construire zoneDeBonus
 	Appelle creerTableauBonus() (fonction de la classe Bonus) pour construire tableauDeBonus
@@ -51,6 +51,10 @@ public:
 	std::vector<Bonus> getTableauDeBonus(); // récupère tableauDeBonus
 	
 
+	void setNom(char* nouveauNom); // change le nom du parcours
+	char* getNom();
+
+
 	// BONUS
 	std::vector<int> scannerEtatBonus(); // regarde quels bonus ont été pris (estPris = true)
 	/*
@@ -62,7 +66,7 @@ public:
 
 	////////////////////////////////////////////////////////////////////////////////////////
 	/* ATTENTION : A MODIFIER */
-	std::vector<Point3D> recupererPositionZoneDeBonus(); // position des zones de bonus 
+	std::vector<Point3D> creerPositionZoneDeBonus(); // position des zones de bonus 
 	/*
 	Génère les zones de bonus depuis le circuit
 	*/
@@ -84,14 +88,23 @@ public:
 	////////////////////////////////////////////////////////////////////////////////////////
 	/* ATTENTION : A MODIFIER */
 	// SCRIPT DE PARCOURS
-	std::vector<Point3D> recupererCoordonneesParcoursScript(); // coordonnées de parcours des adversaires
-	/*
-	*/
+
+	void creerScriptParcours1(); // coordonnées de parcours1 des adversaires
+	void creerScriptParcours2(); // coordonnées de parcours2 des adversaires
+	void creerScriptParcours3(); // coordonnées de parcours3 des adversaires
+
 	/////////////////////////////////////////////////////////////////////////////////////
 
 private:
+
+	char* nom; // circuit 1 ou circuit 2 selon 
+
 	std::vector<Point3D> zoneDeBonus; // tableau de zone de bonus
 	std::vector<Bonus> tableauDeBonus; //tableau de bonus
+
+	std::vector<Point3D> parcours1;
+	std::vector<Point3D> parcours2;
+	std::vector<Point3D> parcours3;
 
 };
 
