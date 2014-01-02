@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Point3D.hpp"
+#include "../Bonus/bonus.hpp"
 
 class Voiture {
 	private:
@@ -29,7 +30,7 @@ class Voiture {
 
 		// Setteur
 		void setVitesse(int vit);
-		void setPosition(Point3D pos);
+		void setPosition(const Point3D pos);
 		void setPosition(float x, float y, float z);
 		void setPuissance(int pui);
 		void setVirage(int vir);
@@ -37,5 +38,6 @@ class Voiture {
 		void setRayon(int ray);
 
 		// Scanner : dans un rayon autour de lui il vérfie s'il y a l'autre objet passé en paramètre
-		bool ScannerVoiture(Point3D positionAdversaire); // retourne vrai s'il est dans le rayon autour de la voiture
+		bool ScannerVoiture(Voiture voitureAScanner);
+		bool ScannerBonus(Bonus bonusAScanner);
 };
