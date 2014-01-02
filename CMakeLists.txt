@@ -9,6 +9,8 @@ include_directories(${OPENGL_INCLUDE_DIR} ${SDL_INCLUDE_DIR} ${SDLIMAGE_INCLUDE_
 #${ASSIMP_INCLUDE_DIR} = third-party/assimp--3.0.1270-sdk/include
 # ${ASSIMP_LIBRARY} = third-party/assimp--3.0.1270-sdk/lib/assimp_release-dll_x64/assimp.lib
 
+set(ENABLE_BOOST_WORKAROUND ON)
+set(CMAKE_CXX_FLAGS "-std=c++0x")
 
 set(CMAKE_CXX_FLAGS "-std=c++0x")
 
@@ -34,9 +36,8 @@ set(ALL_LIBRARIES glimac glew ${OPENGL_LIBRARIES} ${SDL_LIBRARY} ${SDLIMAGE_LIBR
 add_subdirectory(Bonus)
 add_subdirectory(Circuit)
 add_subdirectory(Fichier)
-add_subdirectory(Participants)
 add_subdirectory(Voiture)
 
-add_executable(musikart main.cpp Fichier/fichier.hpp Fichier/fichier.cpp Bonus/bonus.cpp Bonus/bonus.hpp Circuit/circuit.hpp Circuit/circuit.cpp Interface/interface.hpp Interface/interface.cpp Participants/participant.hpp Participants/participant.cpp Participants/adversaireParticipant.hpp Participants/adversaireParticipant.cpp Participants/joueurParticipant.hpp Participants/joueurParticipant.cpp Voiture/voiture.cpp Voiture/voiture.hpp Voiture/guitareVoiture.cpp Voiture/guitareVoiture.hpp)
+add_executable(musikart main.cpp Fichier/fichier.hpp Fichier/fichier.cpp Bonus/bonus.cpp Bonus/bonus.hpp Circuit/circuit.hpp Circuit/circuit.cpp Interface/interface.hpp Interface/interface.cpp Voiture/voiture.cpp Voiture/voiture.hpp Voiture/guitareVoiture.cpp Voiture/guitareVoiture.hpp Voiture/basseVoiture.hpp Voiture/basseVoiture.cpp Voiture/microVoiture.hpp Voiture/microVoiture.cpp Voiture/batterieVoiture.hpp Voiture/batterieVoiture.cpp)
 
 target_link_libraries(musikart ${ALL_LIBRARIES})
