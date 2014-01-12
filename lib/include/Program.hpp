@@ -39,11 +39,15 @@ namespace glimac {
 		void use() const {
 			glUseProgram(m_nGLId);
 		}
+		
+		void stop() const {
+			glUseProgram(0);
+		}
 
 	private:
 		Program(const Program&);
 		Program& operator =(const Program&);
-
+		
 		GLuint m_nGLId;
 	};
 

@@ -1,0 +1,42 @@
+# Blender MTL File: 'mapv6large.blend'
+# Material Count: 4
+
+newmtl Material
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd txt_mud.png
+
+newmtl Material.001
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.152142 0.147606 0.149615
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd txt_accelerator.png
+
+newmtl Piste2
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.202516 0.202516 0.202516
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd txt_piste.png
+
+newmtl all
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.622011 0.640000 0.620919
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd txt_grass.png
